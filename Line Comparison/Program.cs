@@ -6,31 +6,33 @@ namespace Line_Comparison
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Line Comparison Computation.");
+            Console.WriteLine("\n Line Comparison Computation.\n");
             // Read the values of 2 Points (x1, y1) and (x2, y2)
+            Line line1 = new Line("Line-1");
+            Line line2 = new Line("Line-2");
             Console.WriteLine("Enter values x1 and y1 for Line 1");
-            int x1 = Convert.ToInt32(Console.ReadLine());
-            int y1 = Convert.ToInt32(Console.ReadLine());
+            line1.x1 = Convert.ToInt32(Console.ReadLine());
+            line1.y1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter values x2 and y2 for Line 1");
-            int x2 = Convert.ToInt32(Console.ReadLine());
-            int y2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter values x3 and y3 for Line 2");
-            int x3 = Convert.ToInt32(Console.ReadLine());
-            int y3 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter values x4 and y4 for Line 2");
-            int x4 = Convert.ToInt32(Console.ReadLine());
-            int y4 = Convert.ToInt32(Console.ReadLine());
+            line1.x2 = Convert.ToInt32(Console.ReadLine());
+            line1.y2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter values x1 and y1 for Line 2");
+            line2.x1 = Convert.ToInt32(Console.ReadLine());
+            line2.y1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter values x2 and y2 for Line 2");
+            line2.x2 = Convert.ToInt32(Console.ReadLine());
+            line2.y2 = Convert.ToInt32(Console.ReadLine());
             //the Length of 2 lines is given
-            double length_of_line1 = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-            double length_of_line2 = Math.Sqrt(Math.Pow(x4 - x3, 2) + Math.Pow(y4 - y3, 2));
+            line1.length = Math.Sqrt(Math.Pow(line1.x2 - line1.x1, 2) + Math.Pow(line1.y2 - line1.y1, 2));
+            line2.length = Math.Sqrt(Math.Pow(line2.x2 - line2.x1, 2) + Math.Pow(line2.y2 - line2.y1, 2));
             // Difference between line1 and line2 is given 
-            int line_difference = length_of_line1.CompareTo(length_of_line2);
+            int line_difference = line1.length.CompareTo(line2.length);
             if (line_difference == 0)
-                Console.WriteLine("Lines are equal in length");
+                Console.WriteLine("\n Lines are equal in length \n");
             else if (line_difference > 0)
-                Console.WriteLine("Line1 is greater in length than Line2");
+                Console.WriteLine("\n Line1 is greater in length than Line2 \n");
             else
-                Console.WriteLine("Line1 is smaller in length than Line2");
+                Console.WriteLine("\nLine1 is smaller in length than Line2 \n");
 
         }
     }
